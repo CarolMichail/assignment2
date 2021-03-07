@@ -48,8 +48,9 @@ void Dialog::on_pushButton_clicked()
       {
       QMessageBox::information(this,"a","This letter is correct");
 
-      //else
+    
       {
+          void QGraphicsScene::removeItem(QGraphicsItem *arm1)
 
             }
 
