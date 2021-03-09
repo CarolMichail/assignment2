@@ -22,18 +22,24 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+
+
 private:
     Ui::Dialog *ui;
      QGraphicsEllipseItem* ellipse;
      QGraphicsScene* scene;
-     QGraphicsLineItem*arm1;
-     QGraphicsLineItem*arm2;
-     QGraphicsLineItem*leg2;
-     QGraphicsLineItem*leg1;
-     QGraphicsLineItem*body;
-     QGraphicsLineItem*line1;
-     QGraphicsLineItem*line2;
-     QGraphicsLineItem*line3;
+     QLineF*arm1;
+     QLineF*arm2;
+     QLineF*leg2;
+     QLineF*leg1;
+     QLineF*body;
+     QLineF*line1;
+     QLineF*line2;
+     QLineF*line3;
+     QLineF*line4;
+     QLineF*l;
+     int count=1;
+     QGraphicsEllipseItem *face;
 
 
 
