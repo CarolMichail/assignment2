@@ -10,17 +10,10 @@ Dialog::Dialog(QWidget *parent)
     scene = new QGraphicsScene(this);
     ui->graphicsView->setScene(scene);
 
-    QLineF  *body, *righthand, *lefthand, *rightleg, *leftleg;
+
     QBrush RedBrush(Qt::red);
     QPen Blackpen(Qt::black);
     QPen Bluepen(Qt::blue);
-
-   ellipse = scene->addEllipse(230, 290,60, 60, Blackpen, RedBrush);
-
-   QLineF *line1, *line2, *line3, *line4;
-
-
-
     Blackpen.setWidth(5);
 
     line1 = new QLineF(QPoint(50,550), QPoint(150,550));
@@ -44,32 +37,40 @@ Dialog::~Dialog()
     delete ui;
 }
 QString word = "hang";
-int count;
 
 
 void Dialog::on_pushButton_clicked()
 {
+    QString userInput = ui->lineEdit->text();
+    QChar userChar = userInput[0];
+int flag=0;
 
 
-
-
-    for(int i=0; i<word.length();i++)
+QString label= ui->label_1->text();
+    for(int i=0; i<test.length();i++)
     {
-        if (word[i]!='h'||'a'||'n'||'g' )
+
+        if (userChar==test[i])
         {
+          label[i]=userChar;
 
-        count++;
+           ui->label_1->setText(label);
 
-         }
-       }
+           flag++;
 
-    QLineF  *body, *righthand, *lefthand, *rightleg, *leftleg;
+
+        }
+
+    }
+            if (flag==0)
+                count++;
+            if(test==label)
+ ui->label_1->setText("YouWin");
+
+
     QBrush RedBrush(Qt::red);
     QPen Blackpen(Qt::black);
     QPen Bluepen(Qt::blue);
-
-
-
 switch(count)
 {
 case 1 :
@@ -91,15 +92,24 @@ case 8:
 case 9:
     scene->addLine(*rightleg); break;
 case 10:
-    scene->addLine(*leftleg); break;
+    scene->addLine(*leftleg);  ui->label_1->setText("You Lose");break;
+}
 }
 
+
+
+void Dialog::on_lineEdit_returnPressed()
+{
+         QString x = ui -> lineEdit -> text();
+
+
+    connect(ui->lineEdit, SIGNAL(textChanged(Qstring)), this, SLOT(checkInput(Qstring)));
+
 }
 
+void Dialog::on_label_1_linkActivated(const QString &link)
+{
 
-
-
-
-
+}
 
 

@@ -24,25 +24,25 @@ private slots:
 
 
 
+    void on_lineEdit_returnPressed();
+
+    void on_label_1_linkActivated(const QString &link);
+
+
+
 private:
     Ui::Dialog *ui;
-     QGraphicsEllipseItem* ellipse;
+    // QGraphicsEllipseItem* ellipse;
      QGraphicsScene* scene;
-     QLineF*arm1;
-     QLineF*arm2;
-     QLineF*leg2;
-     QLineF*leg1;
-     QLineF*body;
+     QLineF  *body, *righthand, *lefthand, *rightleg, *leftleg;
      QLineF*line1;
      QLineF*line2;
      QLineF*line3;
      QLineF*line4;
-     QLineF*l;
-     int count=1;
+
+     int count=0;
      QGraphicsEllipseItem *face;
-
-
-
+     QString test = "hang";
 
 
 };
